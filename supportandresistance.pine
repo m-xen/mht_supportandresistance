@@ -1,0 +1,34 @@
+//@version=6
+//@author=@mhill888
+
+
+indicator('MHT Support & Resistance', shorttitle = 'MHT S&R', overlay = true)
+
+leftbars = input(50, title = 'Left Strength')
+rightbars = input(25, title = 'Right Strength')
+
+
+pivot_high = ta.pivothigh(high, leftbars, rightbars)
+pivot_lows = ta.pivotlow(low, leftbars, rightbars)
+
+
+level1 = ta.valuewhen(bool(pivot_high), high[rightbars], 0)
+level2 = ta.valuewhen(bool(pivot_lows), low[rightbars], 0)
+level3 = ta.valuewhen(bool(pivot_high), high[rightbars], 1)
+level4 = ta.valuewhen(bool(pivot_lows), low[rightbars], 1)
+level5 = ta.valuewhen(bool(pivot_high), high[rightbars], 2)
+level6 = ta.valuewhen(bool(pivot_lows), low[rightbars], 2)
+
+level1_colour = close >= level1 ? color.green : color.red
+level2_colour = close >= level2 ? color.green : color.red
+level3_colour = close >= level3 ? color.green : color.red
+level4_colour = close >= level4 ? color.green : color.red
+level5_colour = close >= level5 ? color.green : color.red
+level6_colour = close >= level6 ? color.green : color.red
+
+plot(level1, style = plot.style_circles, color = level1_colour, show_last = 1, linewidth = 2, trackprice = true, offset = rightbars)
+plot(level2, style = plot.style_circles, color = level2_colour, show_last = 1, linewidth = 2, trackprice = true)
+plot(level3, style = plot.style_circles, color = level3_colour, show_last = 1, linewidth = 2, trackprice = true)
+plot(level4, style = plot.style_circles, color = level4_colour, show_last = 1, linewidth = 2, trackprice = true)
+plot(level5, style = plot.style_circles, color = level5_colour, show_last = 1, linewidth = 2, trackprice = true)
+plot(level6, style = plot.style_circles, color = level6_colour, show_last = 1, linewidth = 2, trackprice = true)
