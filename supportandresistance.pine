@@ -18,6 +18,10 @@ level3 = ta.valuewhen(bool(pivot_high), high[rightbars], 1)
 level4 = ta.valuewhen(bool(pivot_lows), low[rightbars], 1)
 level5 = ta.valuewhen(bool(pivot_high), high[rightbars], 2)
 level6 = ta.valuewhen(bool(pivot_lows), low[rightbars], 2)
+level7 = ta.valuewhen(bool(pivot_high), high[rightbars], 3)
+level8 = ta.valuewhen(bool(pivot_lows), low[rightbars], 3)
+level9 = ta.valuewhen(bool(pivot_high), high[rightbars], 4)
+level10 = ta.valuewhen(bool(pivot_lows), low[rightbars], 4)
 
 level1_colour = close >= level1 ? color.green : color.red
 level2_colour = close >= level2 ? color.green : color.red
@@ -25,10 +29,18 @@ level3_colour = close >= level3 ? color.green : color.red
 level4_colour = close >= level4 ? color.green : color.red
 level5_colour = close >= level5 ? color.green : color.red
 level6_colour = close >= level6 ? color.green : color.red
+level7_colour = close >= level7 ? color.green : color.red
+level8_colour = close >= level8 ? color.green : color.red
+level9_colour = close >= level9 ? color.green : color.red
+level10_colour = close >= level10 ? color.green : color.red
 
-plot(level1, style = plot.style_circles, color = level1_colour, show_last = 1, linewidth = 2, trackprice = true, offset = rightbars)
+plot(level1, style = plot.style_circles, color = level1_colour, show_last = 1, linewidth = 2, trackprice = true)
 plot(level2, style = plot.style_circles, color = level2_colour, show_last = 1, linewidth = 2, trackprice = true)
 plot(level3, style = plot.style_circles, color = level3_colour, show_last = 1, linewidth = 2, trackprice = true)
 plot(level4, style = plot.style_circles, color = level4_colour, show_last = 1, linewidth = 2, trackprice = true)
 plot(level5, style = plot.style_circles, color = level5_colour, show_last = 1, linewidth = 2, trackprice = true)
 plot(level6, style = plot.style_circles, color = level6_colour, show_last = 1, linewidth = 2, trackprice = true)
+plot(level7, style = plot.style_circles, color = level7_colour, show_last = 1, linewidth = 2, trackprice = true)
+plot(level8, style = plot.style_circles, color = level8_colour, show_last = 1, linewidth = 2, trackprice = true)
+plot(level9, style = plot.style_circles, color = level9_colour, show_last = 1, linewidth = 2, trackprice = true)
+plot(level10, style = plot.style_circles, color = level10_colour, show_last = 1, linewidth = 2, trackprice = true)
