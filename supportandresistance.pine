@@ -5,7 +5,7 @@
 indicator('MHT Support & Resistance', shorttitle = 'MHT S&R', overlay = true)
 
 leftbars = input(50, title = 'Left Strength')
-rightbars = input(25, title = 'Right Strength')
+rightbars = input(15, title = 'Right Strength')
 
 
 pivot_high = ta.pivothigh(high, leftbars, rightbars)
